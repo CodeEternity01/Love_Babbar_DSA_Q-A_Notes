@@ -1,0 +1,1 @@
+Developed an innovative Expense Tracker app, featuring intuitive expense entry, dynamic category comparison, and graphical representation using Chart.js. Users can visualize spending patterns over time, enhancing financial awareness. The app ensures data security and received positive feedback for its user-friendly interface, contributing to increased user engagement.
