@@ -1,56 +1,44 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-#define ll long long int
-#define ld long double
-
-class graph{
-    public:
-    
-    unordered_map<int,list<int>> adj;
-
-    void addEdge(int u,int v,int direction){
-        // if direction=0 means undirected
-        // if direction=1 means directed
-
-        adj[u].push_back(v);
-        if(direction==0){
-            adj[v].push_back(u);
-        }
+void reverse(string &str){
+    int i=0;
+    int j=str.length()-1;
+    while(i<=j){
+        swap(str[i],str[j]);
+        i++; j--;
     }
-    void print(){
 
-        for(auto i: adj){
-            cout<<i.first<<"-->";
-            for(auto it : i.second){
-                cout<<it<<", ";
-            }
-            cout<<endl;
-        }
-    }
-};
 
-int main(){
+}
+string solve(string &str) {
+   
+   if(str=="")
+    return "";
 
-    int n;
-    cout<<"enter no node"<<endl;
-    cin>>n;
+ reverse(str);
 
-    int m;
-    cout<<"enter no of edges"<<endl;
-    cin>>m;
-    graph g;
-    for(int i=0;i<m;i++){
-       int u,v;
-       cin>>u>>v;
+ for(int i=0;i<str.length();i++){
+    if(str[i]=='A')
+      str[i]='T';
+    else if(str[i]=='C')
+      str[i]='G';
+    else if(str[i]=='T')
+      str[i]='A';
+    else if(str[i]=='G')
+      str[i]='C';
+ }
 
-       g.addEdge(u,v,0);
-    }
-    g.print();
-
-    
-    return 0;
+ return str;
 }
 
+int main() {
+    
+string str="GTCAG";
 
+cout<<solve(str);
 
+    return 0;
+}
