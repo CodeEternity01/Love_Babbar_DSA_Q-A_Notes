@@ -12,7 +12,7 @@ bool isSafeCombination(int ix, int iy, int jx, int jy, int fx, int fy, int t) {
 
     // Step 3: Compare Time Taken with Distance
     // Step 4: Decision Making
-    return timeToReach >= distance && (timeToReach - distance) % 2 == 0 && timeToReach <= t;
+    return timeToReach > distance && (timeToReach - distance) % 2 == 0 && timeToReach <= t;
 }
 
 int main() {
