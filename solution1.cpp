@@ -16,7 +16,7 @@ bool isSafeCombination(int ix, int iy, int jx, int jy, int fx, int fy, int t) {
 }
 
 int main() {
-    int n; // Number of combinations
+    int n; 
     cin >> n;
 
     for (int i = 0; i < n; ++i) {
