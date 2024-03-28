@@ -3,37 +3,28 @@
 
 using namespace std;
 
-int minMangoesToRemove(int N, vector<int>& A) {
-    int evenCount = 0, oddCount = 0;
-
-    for (int i = 0; i < N; ++i) {
-        if (A[i] % 2 == 0) {
-            evenCount++;
-        } else {
-            oddCount++;
-        }
-    }
-
-   
-    return min(evenCount, oddCount);
-}
 
 int main() {
-    int T;
-    cin >> T;
+    int t;
 
-    while (T--) {
-        int N;
-        cin >> N;
+    cin >> t;
 
-        vector<int> A(N);
+     while(t--) {
 
-        for (int i = 0; i < N; ++i) {
-            cin >> A[i];
+        int a,b,c;
+        cin>>a>>b>>c;
+
+        if(a<b<c){
+          cout<<"STAIR"<<endl;
         }
+        else if(a<b>c){
+          cout<<"PEAK"<<endl;
+        }
+        else{
+          cout<<"NONE"<<endl;
+        }
+        
 
-        cout << minMangoesToRemove(N, A) << endl;
     }
 
-    return 0;
 }

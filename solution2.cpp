@@ -1,36 +1,42 @@
-#include <iostream>
-#include <unordered_map>
+#include <bits/stdc++.h>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
 int main() {
     int t;
+
     cin >> t;
 
      while(t--) {
 
-        int n;
-        cin>>n;
+       string str;
+       cin>>str;
 
-        vector<int> arr(n);
-        for(int i=0;i<n;i++){
-            cin>>arr[i];
-        }
+       string hour=str.substr(0,2);
+       string min=str.substr(3,2);
 
-      unordered_map<int,int> freq;
-      for(int i=0;i<n;i++){
-        freq[arr[i]]++;
-      }
-      int fre=0;
-      for(auto it: freq){
-        if(fre<it.second){
-            fre=it.second;
+       int a=stoi(hour);
+
+       if(a<=11 && a!=0){
+        cout<<str<<" "<<"AM"<<endl;
+       }
+       else if(a==12){
+        cout<<str<<" "<<"PM"<<endl;
+       }
+       else if(a==0  ){
+        cout<<"12"<<":"<<min<<" "<<"AM"<<endl;
+       }
+       else{
+        a=a-12;
+         hour=to_string(a);
+        if(a<=9){
+           cout<<"0"<<hour<<":"<<min<<" "<<"PM"<<endl;
         }
-      }
-     int ans=n-fre;
-      cout<<ans<<endl;
+       else
+        cout<<hour<<":"<<min<<" "<<"PM"<<endl;
+       }
+
 
     }
 
